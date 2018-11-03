@@ -1,0 +1,14 @@
+# package directories
+node_modules
+
+# Serverless directories
+.serverless
+
+# coverage reports
+coverage
+
+# built zip
+build
+
+# env vars
+.env

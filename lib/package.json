@@ -1,0 +1,18 @@
+{
+  "name": "sweaty-mcsweaterson-lambda",
+  "version": "1.0.0",
+  "description": "the backing aws lambda skill for the Sweaty McSweaterson Alexa Skill",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Eric McCormick (https://edm00se.codes/)",
+  "license": "MIT",
+  "dependencies": {
+    "ask-sdk-core": "2.1.0",
+    "ask-sdk-model": "1.7.1",
+    "got": "9.2.2"
+  },
+  "devDependencies": {}
+}

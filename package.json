@@ -20,7 +20,7 @@
   "license": "MIT",
   "dependencies": {},
   "devDependencies": {
-    "bestzip": "^2.1.4",
+    "bestzip": "^2.1.5",
     "commitizen": "^4.0.3",
     "cz-conventional-changelog": "3.0.2",
     "jest": "^24.9.0",

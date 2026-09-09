@@ -4,29 +4,20 @@ const { execSync } = require('child_process');
 
 const rootDir = path.resolve(__dirname, '..');
 const buildDir = path.join(rootDir, 'build');
-const lambdaDir = path.join(rootDir, 'lib');
 const artifactPath = path.join(buildDir, 'sweatyBundle.zip');
 
 fs.mkdirSync(buildDir, { recursive: true });
 
-const lambdaFiles = [
-  'index.js',
-  'sweaty.js',
-  'weatherGetter.js',
-  'package.json',
-  'package-lock.json'
-];
+const requiredFiles = ['lib/index.js', 'lib/sweaty.js', 'lib/weatherGetter.js'];
 
-for (const file of lambdaFiles) {
-  const source = path.join(lambdaDir, file);
+for (const file of requiredFiles) {
+  const source = path.join(rootDir, file);
   if (!fs.existsSync(source)) {
     throw new Error(`Missing required Lambda file: ${file}`);
   }
 }
 
-const zipCommand = `cd "${lambdaDir}" && zip -r "${artifactPath}" ${lambdaFiles.join(
-  ' '
-)}`;
+const zipCommand = `cd "${rootDir}" && zip -r "${artifactPath}" lib node_modules package.json package-lock.json`;
 
 try {
   execSync(zipCommand, { stdio: 'inherit' });

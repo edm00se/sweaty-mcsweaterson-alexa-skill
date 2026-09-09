@@ -12,3 +12,6 @@ build
 
 # env vars
 .env
+
+# dumb
+.DS_Store

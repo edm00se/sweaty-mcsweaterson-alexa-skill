@@ -12,16 +12,23 @@ An Alexa skill that finally answers the big question...
 ## Installation
 
 - `npm install`
+- ensure the Lambda environment has `SWEATY_OPEN_WEATHER_API_KEY` configured
 
 ## Usage
 
+- `npm test`
 - `npm run build`
-- deploy to AWS Lambda by uploading the built `.zip` bundle
+- deploy the generated `.zip` bundle from `build/` to AWS Lambda
+
+## Modernization notes
+
+- uses native Node `fetch` instead of the legacy `got` HTTP client
+- keeps the Alexa request flow and skill behavior stable
+- targets a modern Node runtime (`>=20`) for the project tooling and Lambda packaging
 
 ## Credits
 
 - [ASK SDK](https://npm.im/ask-sdk)
-- [got](https://npm.im/got)
 - [Erol Ahmed's `Popsicle Melting under the Heat of Summer`, on unsplash](https://unsplash.com/photos/fhWNnHmW40Y)
 
 ## License
